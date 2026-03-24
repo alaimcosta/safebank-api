@@ -1,6 +1,6 @@
 # 💳 API de Pagamentos SAFEBANK
 
-SAFEBANK é uma API REST para gerenciamento e processamento de pagamentos. O sistema possibilita o recebimento de pagamentos de débitos de pessoas físicas e jurídicas e foi desenvolvido com a framework **Spring Boot**.
+SAFEBANK é uma API REST para gerenciamento e processamento de pagamentos. O sistema possibilita o recebimento de pagamentos de débitos de pessoas físicas e jurídicas e foi desenvolvido com o framework **Spring Boot**.
 
 ---
 
@@ -36,8 +36,8 @@ src/main/java/br/com/safebank
 
 ### Pré-requisitos
 
-* Java 17 ou superior
-* Maven instalado
+* Java 17
+* Maven
 
 ---
 
@@ -52,7 +52,6 @@ A aplicação estará disponível em:
 ```
 http://localhost:8080
 ```
-
 ---
 
 ## 🗄️ Banco de dados (H2)
@@ -73,13 +72,21 @@ http://localhost:8080/h2-console
 | User     | sa                 |
 | Password | 12345              |
 
+### 🧪 Mock de dados no banco
+
+#### 📌 Inserindo dados de status de pagamento.
+```
+INSERT INTO status_pagamento (id, tipo, descricao) VALUES (1, 'PENDENTE', 'Pendente de Processamento');
+INSERT INTO status_pagamento (id, tipo, descricao) VALUES (2, 'SUCESSO', 'Processado com Sucesso');
+INSERT INTO status_pagamento (id, tipo, descricao) VALUES (3, 'FALHA', 'Processado com Falha');
+```
 ---
 
 ## 📚 Documentação da API
 
-A documentação é gerada automaticamente via Swagger.
+Documentação disponível via Swagger.
 
-### 🔗 Acessar Swagger UI
+### 🔗 Acessar Swagger
 
 ```
 http://localhost:8080/swagger-ui/index.html
