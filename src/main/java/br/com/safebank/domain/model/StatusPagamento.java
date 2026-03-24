@@ -17,9 +17,7 @@ public class StatusPagamento {
 
     @Id
     private Long id;
-
     @Enumerated(EnumType.STRING)
     private TipoStatusPagamento tipo;
-
     private String descricao;
 }

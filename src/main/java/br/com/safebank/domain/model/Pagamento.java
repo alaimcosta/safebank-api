@@ -21,10 +21,8 @@ public class Pagamento {
     private Long id;
     private Integer codigoDebito;
     private String cpfCnpj;
-
     @Enumerated(EnumType.STRING)
     private MetodoPagamento metodoPagamento;
-
     @ManyToOne
     @JoinColumn(name = "status_pagamento_pk")
     private StatusPagamento status;
