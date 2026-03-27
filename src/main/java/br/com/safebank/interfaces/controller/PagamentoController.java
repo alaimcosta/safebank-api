@@ -7,6 +7,7 @@ import br.com.safebank.infra.repository.PagamentoRepository;
 import br.com.safebank.interfaces.dto.AtualizarStatusDTO;
 import br.com.safebank.interfaces.dto.DadosPagamentoRequestDTO;
 import br.com.safebank.interfaces.dto.DadosPagamentoResponseDTO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ class PagamentoController {
     private PagamentoService service;
 
     @PostMapping
-    public ResponseEntity<DadosPagamentoResponseDTO> criar(@RequestBody DadosPagamentoRequestDTO dto) {
+    public ResponseEntity<DadosPagamentoResponseDTO> criar(@RequestBody @Valid DadosPagamentoRequestDTO dto) {
         return ResponseEntity.ok(service.criar(dto));
     }
 
